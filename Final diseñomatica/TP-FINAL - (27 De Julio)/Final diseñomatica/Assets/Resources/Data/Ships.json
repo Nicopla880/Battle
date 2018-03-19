@@ -1,0 +1,29 @@
+{
+    "data":
+            [
+                {
+                    "id":1,
+					"speed": 45,
+					"armor": 10,
+                    "price":50,
+                    "title":"Ship1"
+					
+                },
+                {
+                    "id":2,
+					"speed": 50,
+					"armor": 20,
+                    "price":100,
+                    "title":"Ship2"
+                },
+				{
+                    "id":3,
+					"speed": 40,
+					"armor": 30,
+                    "price":200,
+                    "title":"Ship3"
+                }
+
+            ]
+
+}
