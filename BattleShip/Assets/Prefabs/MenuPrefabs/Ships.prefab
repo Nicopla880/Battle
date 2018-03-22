@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 114443305985585524}
   m_Layer: 5
   m_Name: Buy
-  m_TagString: Untagged
+  m_TagString: BuyButtons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -235,6 +235,8 @@ MonoBehaviour:
     armor: 0
     price: 0
     title: 
+  ScriptMenu: {fileID: 0}
+  BuyButtons: []
 --- !u!114 &114443305985585524
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -147,7 +147,7 @@ public class Nave : MonoBehaviour {
 			if (escnave.activeSelf == false && armor <= 0) {
 					active = false;
 					this.GetComponent<Animator> ().Play ("ExpAnim");
-					SaveScore ();
+					SaveData ();
 					ScriptIsla.FinishGame ();
 			} else if(escnave.activeSelf == false && armor > 0)
 			{
@@ -156,7 +156,7 @@ public class Nave : MonoBehaviour {
 				if (armor <= 0) {
 					active = false;
 					this.GetComponent<Animator> ().Play ("ExpAnim");
-					SaveScore ();
+					SaveData ();
 					ScriptIsla.FinishGame ();
 				}
 			}
@@ -179,7 +179,7 @@ public class Nave : MonoBehaviour {
 			if (escnave.activeSelf == false && armor <= 0) {
 				active = false;
 				this.GetComponent<Animator> ().Play ("ExpAnim");
-				SaveScore ();
+				SaveData ();
 				ScriptIsla.FinishGame ();
 			} else if(escnave.activeSelf == false && armor > 0)
 			{
@@ -188,7 +188,7 @@ public class Nave : MonoBehaviour {
 				if (armor <= 0) {
 					active = false;
 					this.GetComponent<Animator> ().Play ("ExpAnim");
-					SaveScore ();
+					SaveData ();
 					ScriptIsla.FinishGame ();
 				}
 			}
@@ -235,6 +235,7 @@ public class Nave : MonoBehaviour {
 
 
 
+
 	IEnumerator ChangeSpeed(){
 
 		HyperSpeed.gameObject.SetActive (true);
@@ -247,7 +248,7 @@ public class Nave : MonoBehaviour {
 
 
 
-	public void SaveScore(){
+	public void SaveData(){
 
 		int[] aux = new int[20];
 		bool active = true;
@@ -274,6 +275,10 @@ public class Nave : MonoBehaviour {
 				}
 			}
 
+		if (puntajetotal > 100)
+		{
+			gd.Coins += 500;
+		}
 		SaveManager.SaveGame (gd);
 
 		}

@@ -30,6 +30,7 @@ public class LoadData : MonoBehaviour {
 
 		TextAsset txt = Resources.Load<TextAsset> (File);
 		ParseJson (txt.text);
+	
 	}
 
 	void ParseJson(string datajson){
@@ -46,6 +47,9 @@ public class LoadData : MonoBehaviour {
 			ClonShip.transform.localScale = Vector3.one;
 			ClonShip.transform.Find ("ShipImg").GetComponent<Image> ().preserveAspect = true;
 			ClonShip.GetComponent<UIShips> ().ship = ship;
+
+
+
 			switch (ship.id) {
 
 			case 1:
@@ -72,6 +76,16 @@ public class LoadData : MonoBehaviour {
 			}
 
 			ClonShip.GetComponentInChildren<UIShips> ().ship = ship;
+
+			int value = 0;
+			if (MenuManager.gd.Data.TryGetValue ("Ship", out value)) {
+
+				if (value == ship.id) {
+
+					ClonShip.transform.Find ("Buy").GetComponent<Button> ().interactable = false;
+				}
+
+			} 
 
 		}
 	}

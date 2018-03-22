@@ -11,6 +11,8 @@ TagManager:
   - SuperAtaque
   - Escudo
   - BalaBoss
+  - Manager
+  - BuyButtons
   layers:
   - Default
   - TransparentFX

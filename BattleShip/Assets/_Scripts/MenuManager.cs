@@ -16,20 +16,24 @@ public class MenuManager : MonoBehaviour {
 	public AudioSource AS;
 
 	[Header("Others")]
+	public Text TextCoins;
 	public Image FadeOut; 
 	public static GameData gd;
+	private int Coins;
 
 	void Awake(){
 
 		gd = SaveManager.LoadGame ();
 
 
-
-		int value = 0;
-		if (gd.Data.TryGetValue ("FX", out value)) {
+		Coins = gd.Coins;
 
 
-			if (value == 0) {
+		int valueb = 0;
+		if (gd.Data.TryGetValue ("FX", out valueb)) {
+
+
+			if (valueb == 0) {
 
 				AS.enabled = false;
 			} else {
@@ -41,6 +45,8 @@ public class MenuManager : MonoBehaviour {
 
 			AS.enabled = true;
 		}
+
+		TextCoins.text = Coins.ToString ();
 	}
 
 	public void Playbutton(){

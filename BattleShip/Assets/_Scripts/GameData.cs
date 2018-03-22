@@ -39,7 +39,7 @@ public static class SaveManager {
 			GameData gd = new GameData ();
 			gd.Data = new Dictionary<string, int> ();
 			gd.ScoreList = new int[20];
-
+			gd.Coins = 10;
 			return gd;
 
 		}
@@ -53,5 +53,6 @@ public class GameData {
 
 	public Dictionary<string,int> Data;
 	public int[] ScoreList;
+	public int Coins;
 
 }
